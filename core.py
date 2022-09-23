@@ -93,7 +93,7 @@ class CoreUI(QMainWindow):
 
        
         self.viewGithubRepoButton.clicked.connect(
-            lambda: webbrowser.open('https://github.com/winterssy/face_recognition_py'))
+            lambda: webbrowser.open('https://github.com/KrcDigital/Magicial-OpenCV-Face-App.git'))
         self.contactDeveloperButton.clicked.connect(lambda: webbrowser.open('https://t.me/acankirac'))
 
         
