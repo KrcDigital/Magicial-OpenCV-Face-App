@@ -1,0 +1,7 @@
+[telegramBot]
+read_only = true
+token = your_telegramBot_api_token
+chat_id = your_telegram_id
+proxy_url = socks5://127.0.0.1:1080
+message = [OpenCV face recognition automatic alarm system] If you find that an unfamiliar target enters the monitoring area, please deal with it in time.
+

@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dataManageUI</class>
+ <widget class="QWidget" name="dataManageUI">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1093</width>
+    <height>616</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>OpenCV Face Recognition System - DataManage</string>
+  </property>
+  <widget class="QGroupBox" name="dbManageGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>660</x>
+     <y>10</y>
+     <width>411</width>
+     <height>551</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Data Management</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QGroupBox" name="dbStatusGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>391</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Database Status</string>
+    </property>
+    <widget class="QWidget" name="layoutWidget_4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>60</y>
+       <width>385</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="dbUserCountHorizontalLayout">
+      <item>
+       <widget class="QLabel" name="dbUserCountLabel">
+        <property name="text">
+         <string> Stored in the database:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="dbUserCountLcdNum">
+        <property name="segmentStyle">
+         <enum>QLCDNumber::Flat</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QPushButton" name="initDbButton">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>20</y>
+       <width>281</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Initialize the database</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="trainGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>130</y>
+      <width>391</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Training data</string>
+    </property>
+    <widget class="QGroupBox" name="imgPreprocessGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>361</width>
+       <height>121</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Image preprocessing</string>
+     </property>
+     <widget class="QCheckBox" name="equalizeHistCheckBox">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>40</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Histogram equalization</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="trainButton">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>150</y>
+       <width>231</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="toolTip">
+      <string>数据库未完成初始化，请检查</string>
+     </property>
+     <property name="text">
+      <string>Start training</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="logGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>391</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>System log</string>
+    </property>
+    <widget class="QTextEdit" name="logTextEdit">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>381</width>
+       <height>191</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="faceDbGroupBox">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>571</width>
+     <height>551</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Face Library</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <widget class="QGroupBox" name="deleteUserGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>380</y>
+      <width>561</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Delete users</string>
+    </property>
+    <widget class="QGroupBox" name="queryUserGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>241</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>ID</string>
+     </property>
+     <widget class="QLabel" name="queryResultLabel">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>110</y>
+        <width>201</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>201</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QLineEdit" name="queryUserLineEdit">
+         <property name="placeholderText">
+          <string>Please enter a 12-digit id, only accurate query is supported</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="queryUserButton">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="toolTip">
+          <string>数据库未完成初始化，请检查</string>
+         </property>
+         <property name="text">
+          <string>Inquire</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="queryResultGroupBox">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>20</y>
+       <width>301</width>
+       <height>141</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Search result</string>
+     </property>
+     <widget class="QWidget" name="layoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>281</width>
+        <height>87</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="infoHorizontalLayout">
+       <item>
+        <layout class="QVBoxLayout" name="keyVerticalLayout">
+         <item>
+          <widget class="QLabel" name="stuIDLabel">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text">
+            <string>ID：</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="cnNameLabel">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text">
+            <string>Name:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="faceIDLabel">
+           <property name="frameShape">
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="text">
+            <string>Face ID：</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QVBoxLayout" name="valueVerticalLayout">
+         <item>
+          <widget class="QLineEdit" name="stuIDLineEdit">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="cnNameLineEdit">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="faceIDLineEdit">
+           <property name="focusPolicy">
+            <enum>Qt::StrongFocus</enum>
+           </property>
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="deleteUserButton">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>281</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Delete Record</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="dbVisualGroupBox">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>20</y>
+      <width>561</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QTableWidget" name="tableWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>561</width>
+       <height>321</height>
+      </rect>
+     </property>
+     <column>
+      <property name="text">
+       <string>ID:</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Face ID</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Rank</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Registration time</string>
+      </property>
+     </column>
+    </widget>
+    <widget class="QLabel" name="tipLabel">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>320</y>
+       <width>451</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Note: Face ID of -1 indicates that the user's face data has not been trained</string>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>500</x>
+     <y>580</y>
+     <width>101</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Created by KRC</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
